@@ -174,13 +174,13 @@
     [self addSubview:self.portraitControlView];
     [self addSubview:self.landScapeControlView];
     [self addSubview:self.floatControlView];
-    [self addSubview:self.activity];
+    //[self addSubview:self.activity];
     [self addSubview:self.failBtn];
     [self addSubview:self.fastView];
     [self.fastView addSubview:self.fastImageView];
     [self.fastView addSubview:self.fastTimeLabel];
     [self.fastView addSubview:self.fastProgressView];
-    [self addSubview:self.bottomPgrogress];
+    //[self addSubview:self.bottomPgrogress];
     [self addSubview:self.volumeBrightnessView];
 }
 
@@ -730,12 +730,12 @@
     return _landScapeControlView;
 }
 
-- (ZFSpeedLoadingView *)activity {
-    if (!_activity) {
-        _activity = [[ZFSpeedLoadingView alloc] init];
-    }
-    return _activity;
-}
+//- (ZFSpeedLoadingView *)activity {
+//    if (!_activity) {
+//        _activity = [[ZFSpeedLoadingView alloc] init];
+//    }
+//    return _activity;
+//}
 
 - (UIView *)fastView {
     if (!_fastView) {
@@ -790,17 +790,17 @@
     return _failBtn;
 }
 
-- (ZFSliderView *)bottomPgrogress {
-    if (!_bottomPgrogress) {
-        _bottomPgrogress = [[ZFSliderView alloc] init];
-        _bottomPgrogress.maximumTrackTintColor = [UIColor clearColor];
-        _bottomPgrogress.minimumTrackTintColor = [UIColor whiteColor];
-        _bottomPgrogress.bufferTrackTintColor  = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
-        _bottomPgrogress.sliderHeight = 1;
-        _bottomPgrogress.isHideSliderBlock = NO;
-    }
-    return _bottomPgrogress;
-}
+//- (ZFSliderView *)bottomPgrogress {
+//    if (!_bottomPgrogress) {
+//        _bottomPgrogress = [[ZFSliderView alloc] init];
+//        _bottomPgrogress.maximumTrackTintColor = [UIColor clearColor];
+//        _bottomPgrogress.minimumTrackTintColor = [UIColor whiteColor];
+//        _bottomPgrogress.bufferTrackTintColor  = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
+//        _bottomPgrogress.sliderHeight = 1;
+//        _bottomPgrogress.isHideSliderBlock = NO;
+//    }
+//    return _bottomPgrogress;
+//}
 
 - (ZFSmallFloatControlView *)floatControlView {
     if (!_floatControlView) {

@@ -72,7 +72,7 @@
         
         [self.bottomToolView addSubview:self.slider];
         [self.bottomToolView addSubview:self.totalTimeLabel];
-        [self addSubview:self.lockBtn];
+        //[self addSubview:self.lockBtn];
         
         // 设置子控件的响应事件
         [self makeSubViewsAction];
@@ -273,13 +273,13 @@
     self.backgroundColor             = [UIColor clearColor];
     self.playOrPauseBtn.selected     = YES;
     self.titleLabel.text             = @"";
-    self.topToolView.alpha           = 1;
+    self.topToolView.alpha           = 0;//1;
     self.bottomToolView.alpha        = 1;
     self.isShow                      = NO;
 }
 
 - (void)showControlView {
-    self.lockBtn.alpha               = 1;
+    self.lockBtn.alpha               = 0;//1;
     self.isShow                      = YES;
     if (self.player.isLockedScreen) {
         self.topToolView.zf_y        = -self.topToolView.zf_height;
@@ -294,7 +294,7 @@
         self.topToolView.alpha       = 0;
         self.bottomToolView.alpha    = 0;
     } else {
-        self.topToolView.alpha       = 1;
+        self.topToolView.alpha       = 0;//1;
         self.bottomToolView.alpha    = 1;
     }
 }
@@ -459,4 +459,19 @@
     return _lockBtn;
 }
 
+- (void)backAction {
+    self.lockBtn.selected = NO;
+    self.player.lockedScreen = NO;
+    self.lockBtn.selected = NO;
+    if (self.player.orientationObserver.supportInterfaceOrientation & ZFInterfaceOrientationMaskPortrait) {
+        [self.player enterFullScreen:NO animated:YES];
+    }
+    if (self.backBtnClickCallback) {
+        self.backBtnClickCallback();
+    }
+}
+
 @end
+
+
+
