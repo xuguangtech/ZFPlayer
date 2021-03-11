@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.static_framework = true
 #    s.default_subspec = 'Core'
-    spec.default_subspecs = 'Core', 'ControlView', 'AVPlayer', 'ijkplayer'
+    s.default_subspecs = 'Core', 'ControlView', 'AVPlayer', 'ijkplayer'
     
     s.subspec 'Core' do |core|
         core.source_files = 'ZFPlayer/Classes/Core/**/*'
